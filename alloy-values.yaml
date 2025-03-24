@@ -377,11 +377,11 @@ config:
     filelog:
       include:
         - /var/log/containers/*.log
-    start_at: beginning
-    include_file_path: true
-    exporters:
-	loki:
-  	endpoint: http://loki.logging.svc.cluster.local:3100/loki/api/v1/push
+      start_at: beginning
+      include_file_path: true
+  exporters:
+    loki:
+      endpoint: http://loki.logging.svc.cluster.local:3100/loki/api/v1/push
   service:
     pipelines:
       logs:
