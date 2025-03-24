@@ -349,11 +349,11 @@ route:
 
 resources: 
   requests:
-      cpu: 100m
-      memory: 200Mi
-    limits:
-      cpu: 200m
-      memory: 400Mi
+    cpu: 100m
+    memory: 200Mi
+  limits:
+    cpu: 200m
+    memory: 400Mi
 
 ## Node labels for pod assignment
 ## ref: https://kubernetes.io/docs/user-guide/node-selection/
@@ -655,13 +655,13 @@ plugins: []
 ##
 datasources:
   datasources.yaml:
-	apiVersion: 1
-	datasources:
-  	- name: Loki
-    	type: loki
-    	url: http://loki.logging.svc.cluster.local:3100
-    	access: proxy
-    	isDefault: true
+    apiVersion: 1
+    datasources:
+      - name: Loki
+        type: loki
+        url: http://loki.logging.svc.cluster.local:3100
+        access: proxy
+        isDefault: true
 #  datasources.yaml:
 #    apiVersion: 1
 #    datasources:
@@ -913,7 +913,7 @@ sidecar:
     tag: 1.28.0
     sha: ""
   imagePullPolicy: IfNotPresent
-  resources: {}
+  resources:
     requests:
       cpu: 100m
       memory: 200Mi
